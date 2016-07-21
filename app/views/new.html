@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="UTF-8">
+  	<title>Products_new</title>
+    <link rel="stylesheet" href="/static/css/styles2.css" type="text/css">
+  </head>
+  <body>
+  	<div id="wrapper">
+	  	<h2>Add a new product </h2>
+	  	<form action="/products/add_submit" method="POST">
+	  		<label>Name</label>
+	  		<input type="text" name="name" /><br>
+	  		<label>Description</label>
+	  		<input type="text" name="description" /><br>
+	  		<label>Price</label>
+	  		<input type="text" name="price" /><br>
+
+	  		<input type="submit" name="update" value="Create" /><br><br>
+	  		<a href="/">Go back</a>
+	  		{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						<p id="flash">{{ message }}</p>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+	  	</form>
+  	</div>
+  </body>
+</html>

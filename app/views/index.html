@@ -1,8 +1,30 @@
+<!DOCTYPE html>
 <html>
   <head>
+  	<meta charset="UTF-8">
+  	<title>Products</title>
     <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
   </head>
   <body>
-    The best place to start is the "WelcomeController.py" file in app/controllers.
+  	<div id="wrapper">
+  		<h2>Products</h2>
+	  		<table>
+	  			<tr>
+	  				<th>Name</th>
+	  				<th>Description</th>
+	  				<th>Price</th>
+	  				<th>Actions</th>
+	  			</tr>
+	  			{% for i in data %}
+	  			<tr>
+	  				<td>{{ i['name'] }}</td>
+	  				<td>{{ i['description'] }}</td>
+	  				<td>{{ i['price'] }}</td>
+	  				<td><a href="/products/show/{{i['id']}}">Show</a> | <a href="/products/edit/{{i['id']}}">Edit</a> | <form action="/products/delete/{{i['id']}}" method="POST"><input type="submit" value="Remove" name="delete" /></form></td>
+	  			</tr>
+	  			{% endfor %}
+	  		</table>
+  			<h3><a href="/products/new">Add a new product</a></h3>
+    </div>
   </body>
 </html>

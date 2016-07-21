@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="UTF-8">
+  	<title>Products_show</title>
+    <link rel="stylesheet" href="/static/css/styles2.css" type="text/css">
+  </head>
+  <body>
+  	<div id="wrapper">
+	  	<h2>Product</h2>
+	  	<p>Name: {{ data[0]['name'] }}</p>
+	  	<p>Description: {{ data[0]['product'] }}</p>
+	  	<p>Price: {{data[0]['price'] }}</p><br>
+	  	<a href="/products/edit/{{data[0]['id']}}">Edit</a> | <a href="/">Back</a>
+  	</div>
+  </body>
+</html>
